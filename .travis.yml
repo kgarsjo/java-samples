@@ -6,3 +6,6 @@ install:
 
 script:
   - gradle check
+
+notifications:
+  email: false
