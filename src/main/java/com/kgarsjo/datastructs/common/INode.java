@@ -8,7 +8,5 @@ public interface INode<T> extends Iterable {
 
     public T getPayload();
 
-    public Iterator<T> iterator();
-
     public void setNext(INode<T> next);
 }
