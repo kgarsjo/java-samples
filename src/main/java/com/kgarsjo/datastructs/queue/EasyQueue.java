@@ -19,7 +19,7 @@ public class EasyQueue<T> implements IQueue<T> {
         items.add(item);
     }
 
-    public T dequeue () {
+    public T dequeue () throws IllegalStateException{
         if (isEmpty()) {
             throw new IllegalStateException("Queue is empty");
         }
