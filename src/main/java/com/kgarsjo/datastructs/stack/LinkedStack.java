@@ -1,29 +1,11 @@
 package com.kgarsjo.datastructs.stack;
 
+import com.kgarsjo.datastructs.common.INode;
+import com.kgarsjo.datastructs.common.Node;
+
 public class LinkedStack<T> implements IStack<T> {
 
-    private static class Node<T> {
-        private T payload;
-        private Node<T> next;
-
-        Node(T payload) {
-            this.payload = payload;
-        }
-
-        Node<T> getNext() {
-            return next;
-        }
-
-        T getPayload() {
-            return payload;
-        }
-
-        void setNext(Node<T> next) {
-            this.next = next;
-        }
-    }
-
-    private Node<T> head;
+    private INode<T> head;
 
     public boolean isEmpty() {
         return head == null;
@@ -43,7 +25,7 @@ public class LinkedStack<T> implements IStack<T> {
     }
 
     public void push(T item) {
-        Node<T> current = new Node<>(item);
+        INode<T> current = new Node<>(item);
         current.setNext(head);
         head = current;
     }
