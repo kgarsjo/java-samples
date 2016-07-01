@@ -1,6 +1,5 @@
-package com.kgarsjo.datastructs.tests;
+package com.kgarsjo.datastructs.queue;
 
-import com.kgarsjo.datastructs.queue.IQueue;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
