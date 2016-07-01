@@ -1,4 +1,4 @@
-package com.kgarsjo.datastructs;
+package com.kgarsjo.datastructs.stack;
 
 import java.util.Arrays;
 

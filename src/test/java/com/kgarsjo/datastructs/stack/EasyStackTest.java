@@ -1,6 +1,5 @@
-package com.kgarsjo.datastructs.tests;
+package com.kgarsjo.datastructs.stack;
 
-import com.kgarsjo.datastructs.EasyStack;
 import org.junit.Before;
 
 public class EasyStackTest extends AbstractStackTest {

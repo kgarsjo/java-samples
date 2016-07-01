@@ -1,4 +1,4 @@
-package com.kgarsjo.datastructs;
+package com.kgarsjo.datastructs.stack;
 
 public interface IStack<T> {
 

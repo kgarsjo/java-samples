@@ -1,6 +1,5 @@
-package com.kgarsjo.datastructs.tests;
+package com.kgarsjo.datastructs.stack;
 
-import com.kgarsjo.datastructs.LinkedStack;
 import org.junit.Before;
 
 public class LinkedStackTest extends AbstractStackTest {
