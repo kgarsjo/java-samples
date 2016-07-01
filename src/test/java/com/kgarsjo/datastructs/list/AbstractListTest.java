@@ -1,6 +1,5 @@
 package com.kgarsjo.datastructs.list;
 
-import org.assertj.core.data.Index;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
