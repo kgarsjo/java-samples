@@ -60,6 +60,7 @@ public abstract class AbstractSortStrategyTest {
         return testObject.sort(unsorted, comparator);
     }
 
+    @SuppressWarnings("unchecked")
     private <T> List<T> asList(T... elements) {
         return new ArrayList<T>(Arrays.asList(elements));
     }
