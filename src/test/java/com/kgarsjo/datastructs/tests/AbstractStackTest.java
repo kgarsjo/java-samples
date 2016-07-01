@@ -1,6 +1,6 @@
 package com.kgarsjo.datastructs.tests;
 
-import com.kgarsjo.datastructs.IStack;
+import com.kgarsjo.datastructs.stack.IStack;
 import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;

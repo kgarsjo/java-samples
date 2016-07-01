@@ -1,6 +1,6 @@
 package com.kgarsjo.datastructs.tests;
 
-import com.kgarsjo.datastructs.ArrayStack;
+import com.kgarsjo.datastructs.stack.ArrayStack;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

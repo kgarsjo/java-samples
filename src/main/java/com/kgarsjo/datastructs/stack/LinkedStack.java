@@ -1,4 +1,4 @@
-package com.kgarsjo.datastructs;
+package com.kgarsjo.datastructs.stack;
 
 public class LinkedStack<T> implements IStack<T> {
 
