@@ -28,6 +28,11 @@ public abstract class AbstractMapTest {
         Assert.assertTrue(testObject.contains("foo"));
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void mapGetNullKeyThrowsIllegalArgument() {
+        testObject.get(null);
+    }
+
     @Test
     public void emptyMapGetKeyReturnsNull() {
         Assert.assertNull(testObject.get("foo"));
@@ -43,6 +48,16 @@ public abstract class AbstractMapTest {
     public void mapContainingKeyGetKeyReturnsValue() {
         testObject.put("foo", "foo-val");
         Assert.assertEquals("foo-val", testObject.get("foo"));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void mapPutNullKeyThrowsIllegalArgument() {
+        testObject.put(null, "null-value");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void mapRemoveNullKeyThrowsIllegalArgument() {
+        testObject.remove(null);
     }
 
     @Test
