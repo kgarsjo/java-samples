@@ -6,10 +6,10 @@ import com.kgarsjo.datastructs.list.LinkedList;
 public class HashMap<K,V> implements IMap<K,V> {
 
     private static class Entry<K,V> {
-        public final K key;
-        public final V value;
+        final K key;
+        final V value;
 
-        public Entry(K key, V value) {
+        Entry(K key, V value) {
             if (key == null || value == null) {
                 throw new IllegalArgumentException();
             }
@@ -48,7 +48,13 @@ public class HashMap<K,V> implements IMap<K,V> {
     }
 
     public V remove(K key) {
-        return null;
+        Entry<K,V> entry = getEntry(key);
+        if (entry == null) {
+            return null;
+        }
+        IList<Entry<K,V>> chain = getEntryChain(key);
+        chain.remove(entry);
+        return entry.value;
     }
 
     private Entry<K,V> getEntry(K key) {
@@ -63,7 +69,7 @@ public class HashMap<K,V> implements IMap<K,V> {
 
     private IList<Entry<K,V>> getEntryChain(K key) {
         if (key == null) {
-            return null;
+            throw new IllegalArgumentException();
         }
         int index = hashToIndex(key);
         return table[index];
