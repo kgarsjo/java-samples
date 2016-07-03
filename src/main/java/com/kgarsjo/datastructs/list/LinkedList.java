@@ -13,7 +13,6 @@ public class LinkedList<T> implements IList<T> {
 
     private INode<T> head;
 
-
     public void add(T item) {
         Node<T> node = new Node<>(item);
         if (isEmpty()) {
@@ -78,6 +77,14 @@ public class LinkedList<T> implements IList<T> {
         return nodeAt.getPayload();
     }
 
+    public T remove(T element) {
+        int index = indexOf(element);
+        if (index >= 0) {
+            return remove(index);
+        }
+        return null;
+    }
+
     public IList<T> reverse() {
         IList<T> reversed = new LinkedList<>();
         stream().forEach(t -> reversed.add(0, t));
@@ -124,6 +131,17 @@ public class LinkedList<T> implements IList<T> {
 
     private INode<T> getNodeBefore (int index) {
         return getNodeAt(index - 1);
+    }
+
+    private int indexOf(T element) {
+        int idx = 0;
+        for (T current : this) {
+            if (current.equals(element)) {
+                return idx;
+            }
+            ++idx;
+        }
+        return -1;
     }
 
     @SuppressWarnings("unchecked")

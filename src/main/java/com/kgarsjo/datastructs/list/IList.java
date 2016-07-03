@@ -16,6 +16,8 @@ public interface IList<T> extends Iterable<T> {
 
     public T remove(int index);
 
+    public T remove(T element);
+
     public IList<T> reverse();
 
     public void reverseInPlace();
