@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public abstract class AbstractMapTest {
 
-    private IMap<String, String> testObject;
+    protected IMap<String, String> testObject;
 
     @Before
     public abstract void setUp();
