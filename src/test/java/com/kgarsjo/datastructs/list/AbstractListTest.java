@@ -224,6 +224,52 @@ public abstract class AbstractListTest {
     }
 
     @Test
+    public void removeStarElementRemovesIndexValueFromList() {
+        String[] values = new String[] {"foo", "bar", "baz"};
+        Arrays.stream(values).forEach(testObject::add);
+        testObject.remove("foo");
+
+        Object[] expected = Arrays.stream(values)
+                .filter(str -> !str.equals("foo"))
+                .toArray();
+        Object[] actual = testObject.toArray();
+        Assert.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void removeMidElementRemovesIndexValueFromList() {
+        String[] values = new String[] {"foo", "bar", "baz"};
+        Arrays.stream(values).forEach(testObject::add);
+        testObject.remove("bar");
+
+        Object[] expected = Arrays.stream(values)
+                .filter(str -> !str.equals("bar"))
+                .toArray();
+        Object[] actual = testObject.toArray();
+        Assert.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void removeEndElementRemovesIndexValueFromList() {
+        String[] values = new String[] {"foo", "bar", "baz"};
+        Arrays.stream(values).forEach(testObject::add);
+        testObject.remove("baz");
+
+        Object[] expected = Arrays.stream(values)
+                .filter(str -> !str.equals("baz"))
+                .toArray();
+        Object[] actual = testObject.toArray();
+        Assert.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void removeNonexistentElementReturnsNull() {
+        String[] values = new String[] {"foo", "bar", "baz"};
+        Arrays.stream(values).forEach(testObject::add);
+        Assert.assertNull(testObject.remove("quux"));
+    }
+
+    @Test
     public void reverseEmptyListReturnsEmptyList() {
         IList<String> reversed = testObject.reverse();
         Assert.assertTrue(reversed.isEmpty());
